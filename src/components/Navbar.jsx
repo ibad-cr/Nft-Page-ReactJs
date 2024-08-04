@@ -14,28 +14,35 @@ const Navbar = () => {
             <header className='mt-5'>
                 <nav>
                     <div className='left-side d-flex align-items-center'>
-                        <div className='nft-logo'>
-                            <img src="../src/assets/img/pngwing.com.png" alt="NFT Logo" />
-                        </div>
+                        <NavLink to="/" style={{background: 'none'}}>
+                            <div className='nft-logo'>
+                                <img src="../src/assets/img/pngwing.com.png" alt="NFT Logo" />
+                            </div>
+                        </NavLink>
                         <div className='navbar-elements'>
                             <ul className={sidebar ? 'menu-links' : `menu-links-mobile active`}>
+                                <li className='list-group-item active-effect text-center'>
+                                    <div className='nft-logo-mobile'>
+                                        <img src="../src/assets/img/pngwing.com.png" alt="NFT Logo" />
+                                    </div>
+                                </li>
                                 <li className='list-group-item active-effect'>
-                                    <NavLink to="/rewards" className='link' onClick={() => setSidebar(!sidebar)}>
+                                    <NavLink to="/rewards" className='link'>
                                         Rewards
                                     </NavLink>
                                 </li>
                                 <li className='list-group-item active-effect'>
-                                    <NavLink to="/drops" className='link' onClick={() => setSidebar(!sidebar)}>
+                                    <NavLink to="/drops" className='link'>
                                         Drops
                                     </NavLink>
                                 </li>
                                 <li className='list-group-item active-effect'>
-                                    <NavLink to="/explore" className='link' onClick={() => setSidebar(!sidebar)}>
+                                    <NavLink to="/explore" className='link'>
                                         Explore
                                     </NavLink>
                                 </li>
                                 <li className='list-group-item active-effect'>
-                                    <NavLink to="/create" className='link' onClick={() => setSidebar(!sidebar)}>
+                                    <NavLink to="/create" className='link'>
                                         Create
                                     </NavLink>
                                 </li>
@@ -67,7 +74,7 @@ const Navbar = () => {
                                 </li>
                                 <li className='list-group-item'><LiaUserSolid className='user-elements-icon' /></li>
                                 <li className='list-group-item burger-menu'>
-                                    <button aria-label="Toggle menu" style={{ border: 'none', background: 'none' }} onClick={() => {setSidebar(!sidebar)}}>
+                                    <button aria-label="Toggle menu" style={{ border: 'none', background: 'none' }} onClick={() => { setSidebar(!sidebar) }}>
                                         <TfiLayoutMenuSeparated className='user-elements-icon' />
                                     </button>
                                 </li>

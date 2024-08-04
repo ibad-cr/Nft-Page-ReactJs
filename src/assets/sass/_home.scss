@@ -2,3 +2,56 @@ body,
 * {
     color: white;
 }
+
+.home-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .home-container {
+        width: 80%;
+    }
+
+    .home-elements {
+        border: 1px solid #495057;
+        border-radius: 24px;
+
+        .opening-part {
+            display: flex;
+            align-items: center;
+            background: none !important;
+            padding: 0px 20px 0px 20px;
+
+            .left-side {
+                width: 50% !important;
+                background: none !important;
+
+                .nft-information-text {
+                    font-size: 23px;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+
+            .right-side {
+                width: 50% !important;
+                background: none !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .nft-image {
+                    background: none !important;
+
+                    .image {
+                        width: 100%;
+                        object-fit: cover;
+                        // filter: drop-shadow(5px 5px 10px #000000);
+                    }
+                }
+            }
+
+
+        }
+    }
+}
