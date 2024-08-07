@@ -1,16 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
 body,
 * {
     background: #212529;
-    font-family: Melbrick, sans-serif;
+    // font-family: 'Koulen', cursive;
+    font-family: 'Zen Dots', cursive;
 }
 
-@font-face {
-    font-family: 'Melbrick';
-    src: url('../fonts/Melbrick\ DEMO.otf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+// @font-face {
+//     font-family: 'Melbrick';
+//     src: url('../fonts/Melbrick\ DEMO.otf');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
 
 @import 'home';
 @import 'navbar';

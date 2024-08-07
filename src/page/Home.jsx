@@ -1,33 +1,58 @@
 import React from 'react'
 import HomeProductsSlice from '../components/HomeComponents/HomeProductsSlice';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 const Home = () => {
+
+    const shop = useSelector(state => state.shop);
+
+    const [shopItems, setShopItems] = useState([])
+
+    useEffect(() => {
+        setShopItems(shop)
+    }, [shop])
+
     return (
         <div >
             <main>
                 <div className="home-wrapper">
                     <div className="home-container">
-                        <div className='home-elements mt-4'>
-                            <div className='opening-part'>
-                                <div className='left-side'>
-                                    <p className='nft-information-text'>
-                                        NFTs stand out due to their distinctiveness and indivisibility.
-                                        Each token has unique information or attributes that make it different from any other NFT,
-                                        which is why they are referred to as non-fungible. This uniqueness makes NFTs particularly
-                                        attractive for collecting and trading. When someone buys an NFT, they gain ownership of a
-                                        unique digital item, even if copies of the item can be made and shared. The blockchain records
-                                        the ownership and ensures that the specific digital item is associated with the buyer, verifying
-                                        its authenticity and ownership history.
-                                    </p>
-                                </div>
+                        <div className='home-elements mt-4 mb-5'>
+                            <div className='opening-part mt-4'>
                                 <div className="right-side">
                                     <div className="nft-image">
-                                        <img className='image' src="../src/assets/img/NFT-Art-PNG-removebg.png" alt="NFT Art" />
+                                        <div className='gradient-purple'></div>
+                                        <div className='gradient-white'></div>
+                                        <img className='image' src="../src/assets/img/smaurai.png" alt="NFT Art" />
                                     </div>
                                 </div>
+
+                                <div className='left-side'>
+                                    <p className='nft-information-text'>
+                                        NFTs are notable for their uniqueness and indivisibility.
+                                        Each NFT has distinct attributes that differentiate it from others,
+                                        making them non-fungible. This uniqueness makes NFTs particularly appealing
+                                        for collecting and trading. When someone purchases an NFT, they acquire ownership of a
+                                        unique digital item. While copies can be made and shared, the blockchain verifies ownership
+                                        and maintains a record of the item’s authenticity and ownership history.
+                                    </p>
+                                </div>
                             </div>
-                            <div className='mt-5' style={{padding: '20px'}}>
-                                <HomeProductsSlice />
+                            <div className='mt-5 mb-5' style={{ padding: '20px' }}>
+                                <div className='row row-cols-1 row-cols-md-4 g-4'>
+                                    {shopItems.slice(0, 2).map((item, index) => (
+                                        <div>
+                                            <HomeProductsSlice alldata={item} />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className='decoration'>
+                                <div className='decoration-div'></div>
+                                <div className='decoration-circle-div'></div>
                             </div>
                         </div>
                     </div>

@@ -42,8 +42,8 @@ const Navbar = () => {
                                     </NavLink>
                                 </li>
                                 <li className='list-group-item active-effect'>
-                                    <NavLink to="/create" className='link'>
-                                        Create
+                                    <NavLink to="/shop" className='link'>
+                                        Shop
                                     </NavLink>
                                 </li>
                                 <li className='list-group-item search-list'>

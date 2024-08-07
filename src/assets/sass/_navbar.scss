@@ -1,10 +1,12 @@
 .wrapper-div {
     display: flex;
     justify-content: center;
+    position: relative;
+    overflow: visible;
 }
 
 header {
-    position: sticky;
+    position: static !important;
     z-index: 999;
     border-radius: 50em;
     height: 50px;
@@ -45,7 +47,9 @@ header {
 
                     li {
                         background: none !important;
+
                         .link {
+                            font-size: 14px;
                             color: white;
                             text-decoration: none !important;
                             background: none !important;
@@ -175,7 +179,7 @@ header {
     }
 }
 
-.nft-logo-mobile{
+.nft-logo-mobile {
     display: none;
 }
 
@@ -264,8 +268,9 @@ header {
         padding: 5px 0px 5px 20px !important;
     }
 
-    .nft-logo-mobile{
+    .nft-logo-mobile {
         display: block;
+
         img {
             width: 200px;
         }

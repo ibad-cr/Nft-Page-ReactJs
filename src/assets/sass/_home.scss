@@ -15,6 +15,7 @@ body,
     .home-elements {
         border: 1px solid #495057;
         border-radius: 24px;
+        position: relative;
 
         .opening-part {
             display: flex;
@@ -23,35 +24,97 @@ body,
             padding: 0px 20px 0px 20px;
 
             .left-side {
-                width: 50% !important;
+                width: 70% !important;
                 background: none !important;
+                border: 1px solid purple;
+                border-radius: 24px;
+                padding: 20px;
 
                 .nft-information-text {
-                    font-size: 23px;
+                    font-size: 13px;
                     margin: 0;
                     padding: 0;
+                    letter-spacing: 2px;
+                    width: 90%;
                 }
             }
 
             .right-side {
-                width: 50% !important;
+                width: 30% !important;
                 background: none !important;
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
                 .nft-image {
-                    background: none !important;
+                    position: relative;
+                    display: inline-block;
+                }
 
-                    .image {
-                        width: 100%;
-                        object-fit: cover;
-                        // filter: drop-shadow(5px 5px 10px #000000);
-                    }
+                img {
+                    position: relative;
+                    border: 2px solid white;
+                    border-radius: 50%;
+                    width: 250px;
+                    object-fit: cover;
+                    padding: 10px;
+                    z-index: 3;
+                }
+
+                .gradient-purple {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: purple;
+                    width: 80%;
+                    height: 80%;
+                    z-index: 1;
+                    filter: blur(5vw);
+                    border-radius: 50%;
+                    pointer-events: none;
+                }
+
+                .gradient-white {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: white;
+                    width: 60%;
+                    height: 60%;
+                    z-index: 2;
+                    filter: blur(5vw);
+                    border-radius: 50%;
+                    pointer-events: none;
                 }
             }
+        }
 
+        .decoration {
+            .decoration-div {
+                position: absolute;
+                left: 0;
+                bottom: -1px;
+                border: 1px solid #495057;
+                border-left: none;
+                border-bottom: none;
+                border-radius: 0em 50em 50em 0em;
+                width: 30%;
+                height: 40px;
+                background: none !important;
+            }
 
+            .decoration-circle-div {
+                position: absolute;
+                left: 380px;
+                bottom: -1px;
+                border: none;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                background: white;
+            }
         }
     }
 }
