@@ -1,0 +1,17 @@
+.shop-single-card{
+    img {
+        width: 100% !important;
+        height: 300px;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .shop-single-card{
+        img {
+            width: 100% !important;
+            height: 100%;
+            object-fit: cover !important;
+        }
+    }
+}

@@ -1,0 +1,486 @@
+.shop-container {
+    border: 1px solid #495057;
+    border-radius: 24px;
+    padding: 20px 0px 20px 0px; 
+
+    .dropdown-button-list {
+        .all-button-list {
+            display: flex;
+            gap: 30px;
+            padding: 0;
+            margin: 0;
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+                background: none;
+            }
+
+            .dropdown-btn {
+                width: 8em;
+                position: relative;
+                height: 2em;
+                border: 3px ridge orange;
+                outline: none;
+                background-color: transparent;
+                background: none !important;
+                color: white;
+                transition: 1s;
+                border-radius: 0.3em;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            .dropdown-btn::after {
+                content: "";
+                position: absolute;
+                top: -10px;
+                left: 3%;
+                width: 95%;
+                height: 40%;
+                background-color: #212529;
+                transition: 0.5s;
+                transform-origin: center;
+
+            }
+
+            .dropdown-btn::before {
+                content: "";
+                transform-origin: center;
+                position: absolute;
+                top: 80%;
+                left: 3%;
+                width: 95%;
+                height: 40%;
+                background-color: #212529;
+                transition: 0.5s;
+            }
+
+            .dropdown-btn:hover::before,
+            .dropdown-btn:hover::after {
+                transform: scale(0)
+            }
+
+            .dropdown-btn:hover {
+                box-shadow: inset 0px 0px 25px orange;
+            }
+
+            .dropdown-content {
+                display: block;
+                position: absolute;
+                background: none !important;
+                min-width: 100%;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                opacity: 0;
+                transform: translateY(-100px);
+                transition: opacity 0.3s ease, transform 0.5s ease;
+                visibility: hidden;
+
+                .price-list {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px !important;
+                    margin: 0;
+                    gap: 15px;
+                    border: 1px solid orange;
+                    position: relative;
+
+                    li {
+                        width: 100%;
+
+                        button {
+                            width: 100%;
+                            position: relative;
+                            border: 2px solid orange;
+                            border-radius: 0.3em;
+                        }
+
+                        button::after {
+                            content: "";
+                            position: absolute;
+                            top: -10px;
+                            left: 3%;
+                            width: 95%;
+                            height: 40%;
+                            background-color: #212529;
+                            transition: 0.5s;
+                            transform-origin: center;
+
+                        }
+
+                        button::before {
+                            content: "";
+                            transform-origin: center;
+                            position: absolute;
+                            top: 80%;
+                            left: 3%;
+                            width: 95%;
+                            height: 40%;
+                            background-color: #212529;
+                            transition: 0.5s;
+                        }
+
+                        button:hover::before,
+                        button:hover::after {
+                            transform: scale(0)
+                        }
+                    }
+
+                    .red {
+                        width: 30px;
+                        height: 30px;
+                        background: red;
+                        border-radius: 50%;
+                    }
+                }
+
+                .color-list {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px !important;
+                    gap: 15px;
+                    border: 1px solid orange;
+                    position: relative;
+                    width: 100%;
+
+                    li {
+                        width: 100%;
+                        padding: 0 !important;
+                        margin: 0 !important;
+                        display: flex;
+                        align-items: center;
+
+                        button {
+                            width: 100%;
+                            padding: 0 !important;
+                            margin: 0 !important;
+                        }
+                    }
+
+                    .first-part {
+                        display: flex;
+                        justify-content: space-between !important;
+                        width: 100% !important;
+
+                        .red {
+                            width: 30px;
+                            height: 30px;
+                            background: red;
+                            border-radius: 50%;
+                            border: none;
+                        }
+
+                        .green {
+                            width: 30px;
+                            height: 30px;
+                            background: green;
+                            border-radius: 50%;
+                            border: none;
+                        }
+
+                        .yellow {
+                            width: 30px;
+                            height: 30px;
+                            background: yellow;
+                            border-radius: 50%;
+                            border: none;
+                        }
+                    }
+
+                    .secont-part {
+                        display: flex;
+                        justify-content: space-between !important;
+                        width: 100% !important;
+
+                        .blue {
+                            width: 30px;
+                            height: 30px;
+                            background: blue;
+                            border-radius: 50%;
+                            border: none;
+                        }
+
+                        .purple {
+                            width: 30px;
+                            height: 30px;
+                            background: purple;
+                            border-radius: 50%;
+                            border: none;
+                        }
+
+                        .fix-color {
+                            width: 30px;
+                            height: 30px;
+                            background-color: #21D4FD;
+                            background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+                            border-radius: 50%;
+                            border: none;
+                        }
+                    }
+                }
+            }
+
+            .dropdown-content.open {
+                opacity: 1;
+                transform: translateY(0);
+                visibility: visible;
+            }
+        }
+    }
+
+    .sort-method {
+        position: relative;
+
+        .sort-dropdown-content {
+            display: block;
+            position: absolute;
+            right: 0;
+            background: none !important;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.5s ease;
+            visibility: hidden;
+        }
+
+        .sort-dropdown-content.open {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+    }
+}
+
+.middle-line {
+    width: 100%;
+    height: 2px;
+    background: white;
+}
+
+@media (max-width: 576px) {
+    .shop-container {
+        .dropdown-button-list {
+            .all-button-list {
+                display: flex;
+                gap: 30px;
+                padding: 0;
+                margin: 0;
+
+                .dropdown {
+                    position: relative;
+                    display: inline-block;
+                    background: none;
+                }
+
+                .dropdown-btn {
+                    width: 7em;
+                    position: relative;
+                    height: 2em;
+                    border: 3px ridge orange;
+                    outline: none;
+                    background-color: transparent;
+                    background: none !important;
+                    color: white;
+                    transition: 1s;
+                    border-radius: 0.3em;
+                    font-size: 16px;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+
+                .dropdown-btn::after {
+                    content: "";
+                    position: absolute;
+                    top: -10px;
+                    left: 3%;
+                    width: 95%;
+                    height: 40%;
+                    background-color: #212529;
+                    transition: 0.5s;
+                    transform-origin: center;
+
+                }
+
+                .dropdown-btn::before {
+                    content: "";
+                    transform-origin: center;
+                    position: absolute;
+                    top: 90%;
+                    left: 3%;
+                    width: 95%;
+                    height: 40%;
+                    background-color: #212529;
+                    transition: 0.5s;
+                }
+
+                .dropdown-btn:hover::before,
+                .dropdown-btn:hover::after {
+                    transform: scale(0)
+                }
+
+                .dropdown-btn:hover {
+                    box-shadow: inset 0px 0px 25px orange;
+                }
+
+                .dropdown-content {
+                    display: block;
+                    position: absolute;
+                    background: none !important;
+                    min-width: 100%;
+                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                    z-index: 1;
+                    opacity: 0;
+                    transform: translateY(-100px);
+                    transition: opacity 0.3s ease, transform 0.5s ease;
+                    visibility: hidden;
+
+                    .price-list {
+                        display: flex;
+                        flex-direction: column;
+                        padding: 10px !important;
+                        margin: 0;
+                        gap: 15px;
+                        border: 1px solid orange;
+                        position: relative;
+
+                        li {
+                            width: 100%;
+
+                            button {
+                                width: 100%;
+                                position: relative;
+                                border: 2px solid orange;
+                                border-radius: 0.3em;
+                            }
+
+                            button::after {
+                                content: "";
+                                position: absolute;
+                                top: -10px;
+                                left: 3%;
+                                width: 95%;
+                                height: 40%;
+                                background-color: #212529;
+                                transition: 0.5s;
+                                transform-origin: center;
+
+                            }
+
+                            button::before {
+                                content: "";
+                                transform-origin: center;
+                                position: absolute;
+                                top: 80%;
+                                left: 3%;
+                                width: 95%;
+                                height: 40%;
+                                background-color: #212529;
+                                transition: 0.5s;
+                            }
+
+                            button:hover::before,
+                            button:hover::after {
+                                transform: scale(0)
+                            }
+                        }
+
+                        .red {
+                            width: 30px;
+                            height: 30px;
+                            background: red;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .color-list {
+                        display: flex;
+                        flex-direction: column;
+                        padding: 10px !important;
+                        gap: 15px;
+                        border: 1px solid orange;
+                        position: relative;
+                        width: 100%;
+
+                        li {
+                            width: 100%;
+                            padding: 0 !important;
+                            margin: 0 !important;
+                            display: flex;
+                            align-items: center;
+
+                            button {
+                                width: 100%;
+                                padding: 0 !important;
+                                margin: 0 !important;
+                            }
+                        }
+
+                        .first-part {
+                            display: flex;
+                            justify-content: space-between !important;
+                            width: 100% !important;
+
+                            .red {
+                                width: 30px;
+                                height: 30px;
+                                background: red;
+                                border-radius: 50%;
+                                border: none;
+                            }
+
+                            .green {
+                                width: 30px;
+                                height: 30px;
+                                background: green;
+                                border-radius: 50%;
+                                border: none;
+                            }
+
+                            .yellow {
+                                width: 30px;
+                                height: 30px;
+                                background: yellow;
+                                border-radius: 50%;
+                                border: none;
+                            }
+                        }
+
+                        .secont-part {
+                            display: flex;
+                            justify-content: space-between !important;
+                            width: 100% !important;
+
+                            .blue {
+                                width: 30px;
+                                height: 30px;
+                                background: blue;
+                                border-radius: 50%;
+                                border: none;
+                            }
+
+                            .purple {
+                                width: 30px;
+                                height: 30px;
+                                background: purple;
+                                border-radius: 50%;
+                                border: none;
+                            }
+
+                            .fix-color {
+                                width: 30px;
+                                height: 30px;
+                                background-color: #21D4FD;
+                                background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+                                border-radius: 50%;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
