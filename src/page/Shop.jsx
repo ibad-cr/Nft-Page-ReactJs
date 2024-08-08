@@ -35,8 +35,8 @@ const Shop = () => {
         };
     }, []);
 
-    // ==========================Filter-Buttons============================================
-    const filterData = (cat) => {
+    // ==========================Filter-Price-Buttons============================================
+    const filterPriceData = (cat) => {
         if (cat === 'All') {
             setFilterShop(shop);
         } else if (cat === 'Free') {
@@ -48,11 +48,57 @@ const Shop = () => {
         }
     };
 
+    // ==========================Filter-Color-Buttons============================================
+    const filterColorData = (cat) => {
+        if (cat === 'All') {
+            setFilterShop(shop);
+        } else {
+            const result = shop.filter(item => item.color === cat);
+            setFilterShop(result);
+        }
+    };
+
+    // ==========================Filter-Quality-Buttons============================================
+
+    const filterQualityData = (cat) => {
+        const result = shop.filter(item => item.quality === cat);
+        setFilterShop(result);
+    };
+    // =============================Sort-Low-High-Button=========================================
+    const lowSort = () => {
+        const lowPrice = [...filterShop].sort((a, b) => a.price - b.price)
+        setFilterShop(lowPrice);
+    }
+
+    const highSort = () => {
+        const highPrice = [...filterShop].sort((a, b) => b.price - a.price)
+        setFilterShop(highPrice);
+    }
 
     return (
         <div className="shop-container container mt-5">
-            <div>
-                <div className='d-flex align-items-center justify-content-between mb-3'>
+            <div className='shop-opening-part mb-4'>
+                <h1 className='text-center' style={{ borderBottom: '1px solid #495057', margin: '0', padding: '0' }}>Shop</h1>
+                <div className='text-and-shop mt-3'>
+                    <h6>NFTs are unique and indivisible digital assets, much like a samurai’s treasured blade.
+                        Each NFT has distinct features that make it non-fungible, adding to its allure for collectors.
+                        Owning an NFT means possessing a one-of-a-kind digital item. While copies can be made,
+                        the blockchain verifies and records its authenticity and ownership, ensuring each
+                        NFT carries a unique digital legacy.
+                    </h6>
+                    <div className='image-animation-border'>
+                        <div className='border-and-circle'>
+                            <div className='animation-border'></div>
+                            <div className='animation-circle-one'></div>
+                            <div className='animation-circle-two'></div>
+                        </div>
+                        <img src="../src/assets/gif/gori-samurai-nft_e0wYcoPdeLhBKun8.webp" alt="Samurai NFT" />
+                    </div>
+
+                </div>
+            </div>
+            <div className='border-div'>
+                <div className='d-flex align-items-center justify-content-center' style={{ gap: '30px' }}>
                     <div className='dropdown-button-list'>
                         <ul className='all-button-list'>
                             <li className='list-group-item'>
@@ -63,16 +109,13 @@ const Shop = () => {
                                     <div className={`dropdown-content ${openDropdownIndex === 0 ? 'open' : ''}`}>
                                         <ul className='price-list mt-3'>
                                             <li className='list-group-item'>
-                                                <button onClick={() => { setOpenDropdownIndex(null); filterData('All') }}>All</button>
+                                                <button onClick={() => { setOpenDropdownIndex(null); filterPriceData('All') }}>All</button>
                                             </li>
                                             <li className='list-group-item'>
-                                                <button onClick={() => { setOpenDropdownIndex(null); filterData('Free') }}>Free</button>
+                                                <button onClick={() => { setOpenDropdownIndex(null); filterPriceData('Free') }}>Free</button>
                                             </li>
                                             <li className='list-group-item'>
-                                                <button onClick={() => setOpenDropdownIndex(null)}>Paid</button>
-                                            </li>
-                                            <li className='list-group-item'>
-                                                <button onClick={() => setOpenDropdownIndex(null)}>Discount</button>
+                                                <button onClick={() => { setOpenDropdownIndex(null); filterPriceData('Paid') }}>Paid</button>
                                             </li>
                                         </ul>
                                     </div>
@@ -87,24 +130,35 @@ const Shop = () => {
                                         <ul className='color-list mt-3'>
                                             <div className='first-part'>
                                                 <li className='list-group-item'>
-                                                    <button className='red' onClick={() => setOpenDropdownIndex(null)}></button>
+                                                    <button className='red' onClick={() => { setOpenDropdownIndex(null); filterColorData('red') }}></button>
                                                 </li>
                                                 <li className='list-group-item'>
-                                                    <button className='green' onClick={() => setOpenDropdownIndex(null)}></button>
+                                                    <button className='green' onClick={() => { setOpenDropdownIndex(null); filterColorData('green') }}></button>
                                                 </li>
                                                 <li className='list-group-item'>
-                                                    <button className='yellow' onClick={() => setOpenDropdownIndex(null)}></button>
+                                                    <button className='yellow' onClick={() => { setOpenDropdownIndex(null); filterColorData('yellow') }}></button>
                                                 </li>
                                             </div>
                                             <div className='secont-part'>
                                                 <li className='list-group-item'>
-                                                    <button className='blue' onClick={() => setOpenDropdownIndex(null)}></button>
+                                                    <button className='blue' onClick={() => { setOpenDropdownIndex(null); filterColorData('blue') }}></button>
                                                 </li>
                                                 <li className='list-group-item'>
-                                                    <button className='purple' onClick={() => setOpenDropdownIndex(null)}></button>
+                                                    <button className='purple' onClick={() => { setOpenDropdownIndex(null); filterColorData('purple') }}></button>
                                                 </li>
                                                 <li className='list-group-item'>
-                                                    <button className='fix-color' onClick={() => setOpenDropdownIndex(null)}></button>
+                                                    <button className='mix-color' onClick={() => { setOpenDropdownIndex(null); filterColorData('mix') }}></button>
+                                                </li>
+                                            </div>
+                                            <div className='thirdly-part'>
+                                                <li className='list-group-item'>
+                                                    <button className='brown' onClick={() => { setOpenDropdownIndex(null); filterColorData('brown') }}></button>
+                                                </li>
+                                                <li className='list-group-item'>
+                                                    <button className='orange' onClick={() => { setOpenDropdownIndex(null); filterColorData('orange') }}></button>
+                                                </li>
+                                                <li className='list-group-item'>
+                                                    <button className='' onClick={() => { setOpenDropdownIndex(null); filterColorData('All') }}>All</button>
                                                 </li>
                                             </div>
                                         </ul>
@@ -114,14 +168,18 @@ const Shop = () => {
                             <li className='list-group-item'>
                                 <div className="dropdown" ref={el => dropdownRefs.current[2] = el}>
                                     <button className="dropdown-btn" onClick={() => toggleDropdown(2)}>
-                                        Brand
+                                        Quality
                                     </button>
                                     <div className={`dropdown-content ${openDropdownIndex === 2 ? 'open' : ''}`}>
-                                        <ul>
+                                        <ul className='quality-list mt-3'>
                                             <li className='list-group-item'>
-                                                <button onClick={() => setOpenDropdownIndex(null)}>Brand A</button>
-                                                <button onClick={() => setOpenDropdownIndex(null)}>Brand B</button>
-                                                <button onClick={() => setOpenDropdownIndex(null)}>Brand C</button>
+                                                <button onClick={() => { setOpenDropdownIndex(null); filterQualityData('premium') }}>Premium</button>
+                                            </li>
+                                            <li className='list-group-item'>
+                                                <button onClick={() => { setOpenDropdownIndex(null); filterQualityData('modern') }}>Modern</button>
+                                            </li>
+                                            <li className='list-group-item'>
+                                                <button onClick={() => { setOpenDropdownIndex(null); filterQualityData('classic') }}>Classic</button>
                                             </li>
                                         </ul>
                                     </div>
@@ -135,21 +193,22 @@ const Shop = () => {
                             <RxCaretSort />
                         </button>
                         <div className={`sort-dropdown-content ${openDropdownIndex === 3 ? 'open' : ''}`}>
-                            <ul className='sort-list mt-3' style={{ padding: '0', margin: '0' }}>
+                            <ul className='sort-list mt-3'>
                                 <li className='list-group-item'>
-                                    <button>Price: low to high</button>
-                                    <button>Price: low to high</button>
+                                    <button onClick={() => { lowSort(); setOpenDropdownIndex(null); }}>Price: low to high</button>
+                                    <button onClick={() => { highSort(); setOpenDropdownIndex(null); }}>Price: high to low </button>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                {/* <div className='middle-line'></div> */}
-
-                <div className='row row-cols-2 row-cols-md-4 g-4'>
+            <div className='cards-section mt-4'>
+                <div className='cards-gradient'></div>
+                <div className='row row-cols-2 row-cols-md-4 g-4' style={{ background: 'none' }}>
                     {filterShop.map((item, index) => (
-                        <div className='' key={index}>
+                        <div className='' key={index} style={{ background: 'none' }}>
                             <ShopSingleCard
                                 image={item.image}
                                 title={item.title}
@@ -163,7 +222,7 @@ const Shop = () => {
                     ))}
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

@@ -42,7 +42,7 @@ const Home = () => {
                             </div>
                             <div className='mt-5 mb-5' style={{ padding: '20px' }}>
                                 <div className='row row-cols-1 row-cols-md-4 g-4'>
-                                    {shopItems.slice(0, 2).map((item, index) => (
+                                    {shopItems.slice(0, 8).map((item, index) => (
                                         <div>
                                             <HomeProductsSlice alldata={item} />
                                         </div>
